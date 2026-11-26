@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1>Mini Checkout</h1>
+
+      <section aria-labelledby="products-heading" class="panel">
+        <h2 id="products-heading">Products</h2>
+        <div class="products">
+          <article class="product" data-testid="product-p1">
+            <h3>Everyday Canvas Tote</h3>
+            <p class="price" data-testid="price-p1">₹799.00</p>
+            <button type="button" data-testid="add-p1" data-add="p1">Add to cart</button>
+          </article>
+          <article class="product" data-testid="product-p2">
+            <h3>Wireless Desk Mouse</h3>
+            <p class="price" data-testid="price-p2">₹1,499.00</p>
+            <button type="button" data-testid="add-p2" data-add="p2">Add to cart</button>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="cart-heading" class="panel">
+        <h2 id="cart-heading">Cart</h2>
+        <p class="muted" data-testid="empty-cart">Your cart is empty.</p>
+        <table aria-describedby="cart-heading" hidden data-testid="cart-table">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Line total</th>
+              <th scope="col"><span class="sr-only">Remove</span></th>
+            </tr>
+          </thead>
+          <tbody data-testid="cart-rows"></tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="3">Order total</th>
+              <td data-testid="order-total">₹0.00</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section aria-labelledby="checkout-heading" class="panel">
+        <h2 id="checkout-heading">Checkout</h2>
+        <div class="validation" role="alert" hidden data-testid="validation-message"></div>
+
+        <form id="checkout-form" novalidate>
+          <label for="customer-name">Name <span aria-hidden="true">*</span></label>
+          <input id="customer-name" name="customerName" type="text" autocomplete="name" data-testid="customer-name" />
+          <button type="submit" data-testid="place-order">Place Order</button>
+        </form>
+      </section>
+
+      <section class="panel confirmation" aria-labelledby="confirmation-heading" hidden data-testid="confirmation">
+        <h2 id="confirmation-heading">Order confirmation</h2>
+        <p data-testid="confirmation-message">Your order was placed successfully.</p>
+        <p>Reference: <strong data-testid="order-reference"></strong></p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

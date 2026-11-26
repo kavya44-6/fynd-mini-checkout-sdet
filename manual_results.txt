@@ -1,0 +1,3 @@
+Manual check results
+PASS - Manual empty cart blocked: Your cart is empty. Add at least one item before checkout.
+PASS - Manual rapid double-click creates one confirmation: FYND-XXCQIOMQ
